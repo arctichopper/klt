@@ -28,6 +28,10 @@ file( GLOB PROJ_SRCS "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp" )
 #       $<INSTALL_INTERFACE:inc>
 # )
 
+# Conan packages integration
+include( ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake )
+conan_basic_setup( TARGETS )
+
 # Create executable of name "TestProg" for the main function source file
 add_executable( klt_alg main.cpp ${PROJ_SRCS} )
 
@@ -45,7 +49,7 @@ target_compile_options( klt_alg PRIVATE -Werror )
 target_compile_features( klt_alg PRIVATE cxx_std_17 )
 
 # Link lib targets to the executable target
-# target_link_libraries( TestProg teststudy )
+target_link_libraries( klt_alg CONAN_PKG::boost CONAN_PKG::eigen )
 
 # Extra: add tests
 enable_testing()
