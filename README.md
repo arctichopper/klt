@@ -1,5 +1,6 @@
 Requisites:
-    * Conan C/C++ package manager: on Ubuntu 18.04 run `pip3 install conan`.
+
+    - Conan C/C++ package manager: on Ubuntu 18.04 run `pip3 install conan`.
 
 Building:
 
