@@ -4,6 +4,9 @@ include_guard( GLOBAL )
 # CMakeLists test
 cmake_minimum_required( VERSION 3.5 )
 
+# Set debug option (comment for release builds)
+set(CMAKE_BUILD_TYPE Debug)
+
 # Create a project
 project( klt_alg VERSION 1.0.0 LANGUAGES CXX )
 
@@ -49,7 +52,7 @@ target_compile_options( klt_alg PRIVATE -Werror )
 target_compile_features( klt_alg PRIVATE cxx_std_17 )
 
 # Link lib targets to the executable target
-target_link_libraries( klt_alg CONAN_PKG::boost CONAN_PKG::eigen )
+target_link_libraries( klt_alg png jpeg CONAN_PKG::boost CONAN_PKG::eigen )
 
 # Extra: add tests
 enable_testing()

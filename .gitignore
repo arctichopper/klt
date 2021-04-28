@@ -1,1 +1,6 @@
 build/
+tags
+*.swp
+*.bmp
+*.png
+*.jpg
