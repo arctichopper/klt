@@ -18,6 +18,7 @@ namespace klt
             void write_image();
 
         private:
+            boost::gil::rgb8_image_t m_image;
             std::string m_input_filename;
             std::string m_output_filename;
     };

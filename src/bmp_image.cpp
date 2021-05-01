@@ -5,6 +5,7 @@
 namespace klt
 {
     bmp_image::bmp_image( std::string &input_filename, std::string &output_filename ) :
+        m_image(),
         m_input_filename( input_filename ),
         m_output_filename( output_filename )
     {

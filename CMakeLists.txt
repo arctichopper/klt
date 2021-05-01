@@ -52,7 +52,7 @@ target_compile_options( klt_alg PRIVATE -Werror )
 target_compile_features( klt_alg PRIVATE cxx_std_17 )
 
 # Link lib targets to the executable target
-target_link_libraries( klt_alg png jpeg CONAN_PKG::boost CONAN_PKG::eigen )
+target_link_libraries( klt_alg CONAN_PKG::libpng CONAN_PKG::libjpeg CONAN_PKG::boost CONAN_PKG::eigen )
 
 # Extra: add tests
 enable_testing()
