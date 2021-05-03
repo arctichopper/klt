@@ -15,11 +15,11 @@ namespace klt
             png_image( std::string &input_filename, std::string &output_filename );
             virtual ~png_image();
 
+            image_t& get_image();
             void read_image();
             void write_image();
 
         private:
-            boost::gil::rgb8_image_t m_image;
             std::string m_input_filename;
             std::string m_output_filename;
     };

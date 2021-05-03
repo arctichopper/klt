@@ -34,6 +34,7 @@ namespace klt
                 default:
                     break;
             }
+            image->read_image();
         }
         catch( std::exception& e )
         {

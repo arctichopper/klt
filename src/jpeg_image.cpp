@@ -5,7 +5,6 @@
 namespace klt
 {
     jpeg_image::jpeg_image( std::string &input_filename, std::string &output_filename ) :
-        m_image(),
         m_input_filename( input_filename ),
         m_output_filename( output_filename )
     {
@@ -15,10 +14,15 @@ namespace klt
     {
     }
 
+    image_t& jpeg_image::get_image()
+    {
+        return m_image;
+    }
+
     void jpeg_image::read_image()
     {
         std::ifstream in( m_input_filename.c_str(), std::ios::binary );
-        boost::gil::read_image( in, m_image, boost::gil::jpeg_tag() );
+        boost::gil::read_and_convert_image( in, m_image, boost::gil::jpeg_tag() );
     }
 
     void jpeg_image::write_image()
